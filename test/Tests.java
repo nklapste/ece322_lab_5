@@ -20,6 +20,4 @@ public class Tests extends TestCase {
 	public void testMockObjects() {
 		
 	}
-
-
 }
