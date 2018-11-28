@@ -1,8 +1,8 @@
 package modules;
 
-import java.util.ArrayList;
-
 import data.Entry;
+
+import java.util.ArrayList;
 
 public class ModuleD {
 	
@@ -24,8 +24,8 @@ public class ModuleD {
 
 	
 	public ArrayList<Entry> updateData(ArrayList<Entry> data, int index,
-			String name, String number, String filename) {
-		data.set(index+1, new Entry(name, number));
+                                       String name, String number, String filename) {
+		data.set(index, new Entry(name, number));
 		f.displayData(data);
 		g.updateData(filename, data);
 		return data;
@@ -33,7 +33,7 @@ public class ModuleD {
 
 	
 	public ArrayList<Entry> deleteData(ArrayList<Entry> data, int index,
-			String filename) {
+                                       String filename) {
 		data.remove(index);
 		f.displayData(data);
 		g.updateData(filename, data);
