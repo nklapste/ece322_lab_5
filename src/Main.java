@@ -13,27 +13,27 @@ import modules.ModuleG;
 
 
 public class Main {
-	
+
 	public static void main(String[] args){
-		
-		
+
+
 		ModuleE e = new ModuleE();
 		ModuleF f = new ModuleF();
 		ModuleG g = new ModuleG();
-		
+
 		ModuleB b = new ModuleB(f);
 		ModuleC c = new ModuleC(f);
 		ModuleD d = new ModuleD(f, g);
-		
+
 		ModuleA a = new ModuleA(b, c, d, e);
-		
+
 		System.out.println("Welcome to Simple Database!");
 		System.out.println("type 'help' for command list");
-		
+
 		BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
 		String s = "";
 		String[] command;
-		
+
 		while(true){
 			System.out.print("SimpleDB>>  ");
 			try {
