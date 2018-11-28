@@ -1,10 +1,10 @@
 package modules;
 
-import java.io.PrintStream;
-import java.util.ArrayList;
-
 import data.Entry;
 import modules.ModuleE.DataBaseExitException;
+
+import java.io.PrintStream;
+import java.util.ArrayList;
 
 public class ModuleA  {
 	
@@ -92,9 +92,13 @@ public class ModuleA  {
 		}
 		
 	}
+
+	public ArrayList<Entry> getData() {
+	    return data;
+    }
 	
 	private boolean parseDelete(int index) {
-		this.data =  d.deleteData(this.data, index-1, this.filename);
+		this.data =  d.deleteData(this.data, index, this.filename);
 		if(this.data != null)
 			return true;
 		return false;
@@ -135,7 +139,7 @@ public class ModuleA  {
 	}
 	
 	private boolean parseUpdate(int index, String name, String number) {
-		this.data = d.updateData(this.data, index-2, name, number, this.filename);
+		this.data = d.updateData(this.data, index, name, number, this.filename);
 		if(this.data != null)
 			return true;
 		return false;
