@@ -1,10 +1,10 @@
 package data;
 
 public class Entry implements Comparable<Entry>{
-	
+
 	private String name;
 	private String number;
-	
+
 	public Entry(String n1, String n2)
 	{
 		this.setName(n1);
@@ -31,7 +31,7 @@ public class Entry implements Comparable<Entry>{
 	public int compareTo(Entry arg0) {
 		return this.getName().compareTo(arg0.getName());
 	}
-	
+
 	public String toString() {
 		return this.name + ", " + this.number;
 	}
