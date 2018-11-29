@@ -147,6 +147,8 @@ public class ModuleATests {
     public void testModuleAAdd() throws ModuleE.DataBaseExitException {
         String[] command1 = {"load", "test.txt"};
         a.run(command1);
+        outContent.reset();
+
         String[] command2 = {"add", "Insert", "100"};
         a.run(command2);
         assertEquals(
@@ -177,6 +179,7 @@ public class ModuleATests {
     public void testModuleAAddException() throws ModuleE.DataBaseExitException {
         String[] command1 = {"load", "test.txt"};
         a.run(command1);
+        outContent.reset();
         String[] command2 = {"add"};
         a.run(command2);
         assertEquals(
@@ -193,6 +196,7 @@ public class ModuleATests {
     public void testModuleASort() throws ModuleE.DataBaseExitException {
         String[] command1 = {"load", "test.txt"};
         a.run(command1);
+        outContent.reset();
         String[] command2 = {"sort"};
         a.run(command2);
         assertEquals(
@@ -230,13 +234,13 @@ public class ModuleATests {
     public void testModuleAUpdate() throws ModuleE.DataBaseExitException {
         String[] command1 = {"load", "test.txt"};
         a.run(command1);
+        outContent.reset();
         String[] command2 = {"update", "0", "Update", "8080"};
         a.run(command2);
         assertEquals(
                 testDataUpdated,
                 a.getData().toString().replaceAll("\\r?\\n|\\r", "\n")
         );
-
         String expectedOutput = "Current Data:\n1 Update, 8080\n2 JJJ, 1234\n3 Jeremy, 1234\n";
 
         assertEquals(
@@ -267,6 +271,7 @@ public class ModuleATests {
     public void testModuleAUpdateException() throws ModuleE.DataBaseExitException {
         String[] command1 = {"load", "test.txt"};
         a.run(command1);
+        outContent.reset();
         String[] command2 = {"update"};
         a.run(command2);
         assertEquals(
@@ -283,6 +288,8 @@ public class ModuleATests {
     public void testModuleADelete() throws ModuleE.DataBaseExitException {
         String[] command1 = {"load", "test.txt"};
         a.run(command1);
+        outContent.reset();
+
         String[] command2 = {"delete", "0"};
         a.run(command2);
         assertEquals(
@@ -320,6 +327,8 @@ public class ModuleATests {
     public void testModuleADeleteException() throws ModuleE.DataBaseExitException {
         String[] command1 = {"load", "test.txt"};
         a.run(command1);
+        outContent.reset();
+
         String[] command2 = {"delete"};
         a.run(command2);
         assertEquals(
