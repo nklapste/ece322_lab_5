@@ -180,6 +180,7 @@ public class ModuleATests {
         String[] command1 = {"load", "test.txt"};
         a.run(command1);
         outContent.reset();
+
         String[] command2 = {"add"};
         a.run(command2);
         assertEquals(
@@ -197,6 +198,7 @@ public class ModuleATests {
         String[] command1 = {"load", "test.txt"};
         a.run(command1);
         outContent.reset();
+
         String[] command2 = {"sort"};
         a.run(command2);
         assertEquals(
@@ -235,6 +237,7 @@ public class ModuleATests {
         String[] command1 = {"load", "test.txt"};
         a.run(command1);
         outContent.reset();
+
         String[] command2 = {"update", "0", "Update", "8080"};
         a.run(command2);
         assertEquals(
@@ -272,6 +275,7 @@ public class ModuleATests {
         String[] command1 = {"load", "test.txt"};
         a.run(command1);
         outContent.reset();
+
         String[] command2 = {"update"};
         a.run(command2);
         assertEquals(
