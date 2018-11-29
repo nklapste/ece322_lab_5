@@ -62,11 +62,11 @@ public class ModuleATests {
         // Reset the test file after each test
         try (PrintWriter writer = new PrintWriter("test.txt", StandardCharsets.UTF_8)) {
             writer.println("Jeremy,1234");
-            writer.println("Morris,0623");
-            writer.println("Quinn,3847");
+//            writer.println("Morris,0623");
+//            writer.println("Quinn,3847");
             writer.println("JJJ,1234");
-            writer.println("Thomas,777222");
             writer.println("Frank,123456789789");
+//            writer.println("Thomas,777222");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -117,7 +117,7 @@ public class ModuleATests {
                 a.getData().toString().replaceAll("\\r?\\n|\\r", "\n")
         );
 
-        String expectedOutput = "Current Data:\n1 Jeremy, 1234\n2 JJJ, 1234\n3 Frank, 123456789789\n4 Insert, 100\n";
+        String expectedOutput = "Current Data:\n1 Jeremy, 1234\n2 JJJ, 1234\n3 Frank, 123456789789\n";
 
         assertEquals(
                 expectedOutput,
@@ -241,7 +241,7 @@ public class ModuleATests {
                 testDataUpdated,
                 a.getData().toString().replaceAll("\\r?\\n|\\r", "\n")
         );
-        String expectedOutput = "Current Data:\n1 Update, 8080\n2 JJJ, 1234\n3 Jeremy, 1234\n";
+        String expectedOutput = "Current Data:\n1 Update, 8080\n2 JJJ, 1234\n3 Frank, 123456789789\n";
 
         assertEquals(
                 expectedOutput,
@@ -297,7 +297,8 @@ public class ModuleATests {
                 a.getData().toString().replaceAll("\\r?\\n|\\r", "\n")
         );
 
-        String expectedOutput = "Current Data:\n1 JJJ, 1234\n2 Jeremy, 1234\n";
+        // output if sorted
+        String expectedOutput = "Current Data:\n1 JJJ, 1234\n2 Frank, 123456789789\n";
 
         assertEquals(
                 expectedOutput,
